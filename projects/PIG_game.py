@@ -17,11 +17,12 @@ while True:
     else:
         print("Please enter a digit. Try again !")
 
-max_score = 60
+max_score = 20
 players_scores = [0 for _ in range(players)]
 
 while max(players_scores) < max_score:
     for player_idx in range(players):
+        print("\n Winning score: ",max_score)
         print("\n Player number", player_idx + 1,"turn has just started.!")
         print("Your total score is: ",players_scores[player_idx],"\n")
         current_score = 0
@@ -30,9 +31,8 @@ while max(players_scores) < max_score:
         while True:
             ask_roll = input("Would you like to roll ? (yes)")
             
-            if ask_roll.lower() != "yes":
+            if ask_roll.lower() !="yes" and ask_roll !="":
                 break
-            
             value = roll()
             
             if value == 1:
